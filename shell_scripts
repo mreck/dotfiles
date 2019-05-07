@@ -1,0 +1,13 @@
+alias l="ls -lah"
+alias cls="clear"
+
+function joinstr() {
+	str="'$*'"
+	echo "$str"
+}
+
+function ff() {
+	str=$(joinstr $*)
+	str=$(echo "$str" | sed -e 's/\s/\*/g' -e "s/'//g")
+	find . -type f -ipath "*$str*"
+}
