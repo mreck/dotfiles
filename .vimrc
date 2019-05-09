@@ -1,21 +1,24 @@
-set relativenumber
-set background=dark
-set autoindent
-set wildmenu
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+
+" map jk to ESC in insert mode
+inoremap jk <esc>
 
 syntax on
 
-" Remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+set tabstop=4
+set background=dark
 
-" Necesary  for lots of cool vim things
-set nocompatible
+set number
+set relativenumber
 
-" This shows what you are typing as a command
-set showcmd
+set nocompatible " necessary for lots of cool stuff
+set showcmd      " shows you what you are typing as a command
 
-" highlight current line
-set cursorline
-autocmd InsertEnter * set nocursorline
-autocmd InsertLeave * set cursorline
+set hlsearch
+set incsearch " highlight while searching
 
+set ignorecase " case insensitive pattern matching
+set smartcase  " override ignorecase if pattern contains uppercase
