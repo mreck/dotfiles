@@ -11,6 +11,7 @@ alias aptup="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias ls="ls -hN --color=auto --group-directories-first"
 alias l="ls -la"
+alias cp="cp -v"
 alias grep="grep --color=auto"
 alias cls="clear && clear"
 
