@@ -9,7 +9,8 @@ HISTSIZE= HISTFILESIZE= #infinite history
 
 alias aptup="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
-alias l="ls -lah"
+alias ls="ls -hN --color=auto --group-directories-first"
+alias l="ls -la"
 alias cls="clear && clear"
 
 function joinstr() {
