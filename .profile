@@ -13,6 +13,8 @@ alias cp="cp -v"
 alias grep="grep --color=auto"
 alias cls="clear && clear"
 
+alias yt="youtube-dl -i --add-metadata"
+
 function joinstr() {
 	str="'$*'"
 	echo "$str"
