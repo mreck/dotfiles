@@ -5,8 +5,6 @@ fi
 
 EDITOR="vim"
 
-HISTSIZE= HISTFILESIZE= #infinite history
-
 alias aptup="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias ls="ls -hN --color=auto --group-directories-first"
