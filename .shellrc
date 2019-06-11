@@ -39,7 +39,7 @@ function bak() {
 		then
 			cp "$1" "$1.bak"
 		else
-			CNTR=1
+			local CNTR=1
 			while [ -f "$1.bak$CNTR" ]
 			do
 				((CNTR++))
