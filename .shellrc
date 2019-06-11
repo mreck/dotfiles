@@ -25,3 +25,7 @@ function ff() {
 	str=$(echo "$str" | sed -e 's/\s/\*/g' -e "s/'//g")
 	find . -type f -ipath "*$str*"
 }
+
+function wttr() { 
+	curl -s wttr.in/$1
+}
