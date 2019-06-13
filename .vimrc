@@ -13,6 +13,7 @@ imap :o ö
 imap :A Ä
 imap :U Ü
 imap :O Ö
+imap :s ß
 
 syntax on
 
