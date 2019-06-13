@@ -6,6 +6,14 @@ nnoremap <Down>  :echoe "Use j"<CR>
 " map jk to ESC in insert mode
 inoremap jk <esc>
 
+" german chars
+imap :a ä
+imap :u ü
+imap :o ö
+imap :A Ä
+imap :U Ü
+imap :O Ö
+
 syntax on
 
 set tabstop=4
