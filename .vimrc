@@ -22,12 +22,16 @@ set background=dark
 
 set number
 set relativenumber
+set autoindent
 
 set nocompatible " necessary for lots of cool stuff
 set showcmd      " shows you what you are typing as a command
 
-set hlsearch
+" set hlsearch
 set incsearch " highlight while searching
 
 set ignorecase " case insensitive pattern matching
 set smartcase  " override ignorecase if pattern contains uppercase
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
