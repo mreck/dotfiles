@@ -1,19 +1,43 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ ! -f $1 ]
-then
-	echo "file not found: $1"
-else
-	if [ ! -f "$1.bak" ]
+UNIX_TIMESTAMP=
+FNAMES=()
+
+while [ "$1" != "" ]
+do
+	case $1 in
+		-u | --unix-timestamp )
+			UNIX_TIMESTAMP=1
+			;;
+		* )
+			FNAMES+=("$1")
+			;;
+	esac
+	shift
+done
+
+for fn in "${FNAMES[@]}"
+do
+	if [ ! -f $fn ]
 	then
-		cp "$1" "$1.bak"
+		echo "file not found: $fn"
 	else
-		CNTR=1
-		while [ -f "$1.bak$CNTR" ]
-		do
-			((CNTR++))
-		done
-		cp "$1" "$1.bak$CNTR"
+		if [ $UNIX_TIMESTAMP ]
+		then
+			cp "$fn" "$fn.bak_$(date +"%s")"
+		else
+			if [ ! -f "$fn.bak" ]
+			then
+				cp "$fn" "$fn.bak"
+			else
+				CNTR=1
+				while [ -f "$fn.bak$CNTR" ]
+				do
+					((CNTR++))
+				done
+				cp "$fn" "$fn.bak$CNTR"
+			fi
+		fi
 	fi
-fi
+done
 
