@@ -1,4 +1,5 @@
 export EDITOR='vim'
+export TMPDIR='/tmp'
 
 # update PATH env variable
 if [ -d "$HOME/.cargo/bin" ] ; then
