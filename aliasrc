@@ -34,3 +34,5 @@ alias gap="ga -p"
 alias gp="git push"
 alias gpo="gp origin"
 alias gpof="gpo --force-with-lease"
+
+alias gbdag="gfa && git branch -vv | grep ': gone]' | sed -e 's/^[[:space:]]*//' > $TMPDIR/git-gone-branches && $EDITOR $TMPDIR/git-gone-branches && cat $TMPDIR/git-gone-branches | cut -d' ' -f1 | xargs git branch -vD"
