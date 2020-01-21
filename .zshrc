@@ -19,6 +19,8 @@ compinit
 # load aliases
 source ~/configs/aliasrc
 
+# load functions
+source ~/configs/funcrc
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
