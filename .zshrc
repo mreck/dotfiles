@@ -1,5 +1,10 @@
+# load environment
+source $HOME/dotfiles/envrc
+
 # enable colors
 autoload -U colors && colors
+
+# custom prompt
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # save history
@@ -15,13 +20,13 @@ compinit
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # load aliases
-source $HOME/configs/aliasrc
+source $DOTFILES/aliasrc
 
 # load functions
-source $HOME/configs/funcrc
+source $DOTFILES/funcrc
 
 # load zsh-autosuggestions
-source $HOME/configs/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $DOTFILES/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

@@ -1,5 +1,4 @@
-export EDITOR='vim'
-export TMPDIR='/tmp'
+source $HOME/dotfiles/envrc
 
 # update PATH env variable
 if [ -d "$HOME/.cargo/bin" ] ; then
@@ -14,6 +13,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/configs/scripts" ] ; then
-    PATH="$HOME/configs/scripts:$PATH"
+if [ -d "$DOTFILES/scripts" ] ; then
+    PATH="$DOTFILES/scripts:$PATH"
 fi
