@@ -12,13 +12,16 @@ autoload -Uz compinit
 compinit
 
 # use fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # load aliases
-source ~/configs/aliasrc
+source $HOME/configs/aliasrc
 
 # load functions
-source ~/configs/funcrc
+source $HOME/configs/funcrc
 
-# Load zsh-syntax-highlighting; should be last.
+# load zsh-autosuggestions
+source $HOME/configs/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
