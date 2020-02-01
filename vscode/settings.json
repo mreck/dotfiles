@@ -3,5 +3,14 @@
     "telemetry.enableCrashReporter": false,
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "diffEditor.renderSideBySide": false,
+    "workbench.iconTheme": "vscode-icons",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "window.restoreWindows": "none",
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
 }
