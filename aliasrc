@@ -2,11 +2,11 @@
 
 alias aptup="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias ls="ls -hN --color=auto --group-directories-first"
-alias l="ls -lah"
+alias l="ls -la"
 alias cp="cp -v"
 alias grep="grep --color=auto"
 alias cls="clear && clear"
-
+alias psg="ps -ef | grep -i"
 alias yt="youtube-dl -i --add-metadata"
 
 # GIT
