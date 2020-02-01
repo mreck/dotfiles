@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export DOTFILES="$HOME/dotfiles"
 export EDITOR='vim'
 export TMPDIR='/tmp'
