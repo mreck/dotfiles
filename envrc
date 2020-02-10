@@ -3,4 +3,4 @@
 export DOTFILES="$HOME/dotfiles"
 export EDITOR='vim'
 export TMPDIR='/tmp'
-export CDPATH="$HOME/projects:$HOME/bookmarks"
+export CDPATH=".:$HOME/projects:$HOME/bookmarks"
