@@ -7,8 +7,25 @@ set -g fish_prompt_pwd_dir_length 3
 function fish_prompt
 	set_color brblack
 	echo -n "["(date "+%H:%M")"] "
+
+	set_color -o blue
+
+	set WHOAMI (whoami)
+	if [ $WHOAMI = 'root' ]
+		set_color red
+		echo -n $WHOAMI
+		set_color blue
+	else
+		echo -n $WHOAMI
+	end
+	
+	set_color -o brwhite
+	echo -n '@'
 	set_color blue
-	echo -n (whoami)'@'(hostname)
+
+	echo -n (hostname)
+
+	set_color -d blue
 
 	if [ $PWD != $HOME ]
 		set_color brblack
