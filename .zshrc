@@ -22,9 +22,6 @@ compinit
 # load aliases
 source $DOTFILES/aliasrc
 
-# load functions
-source $DOTFILES/funcrc
-
 # load zsh-autosuggestions
 source $DOTFILES/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
 
