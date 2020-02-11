@@ -47,6 +47,7 @@ function fish_greeting
 	echo -e (whoami | sed 's/^up //' | awk '{print " \\\\e[1mUser: \\\\e[0;32m"$0"\\\\e[0m"}')
 	echo -e (uptime -p | sed 's/^up //' | awk '{print " \\\\e[1mUptime: \\\\e[0;32m"$0"\\\\e[0m"}')
 	echo -e (uname -n | awk '{print " \\\\e[1mHostname: \\\\e[0;32m"$0"\\\\e[0m"}')
+
 	echo -e " \\e[1mDisk usage:\\e[0m"
 	echo
 	echo -ne (\
@@ -70,7 +71,7 @@ function fish_greeting
 				-e 's/\/.*//'| \
 			awk 'BEGIN {i=""} /\.|:/ {print i" "$0"\\\n"; next} // {i = $0}' | \
 			sort | \
-			column -t -R1 | \
+			column -t | \
 			# public addresses are underlined for visibility \
 			sed 's/ \([^ ]\+\)$/ \\\e[4m\1/' | \
 			# private addresses are not \
@@ -88,50 +89,14 @@ function fish_greeting
 		)
 	echo
 
-	set r (random 0 100)
-	if [ $r -lt 5 ] # only occasionally show backlog (5%)
-		echo -e " \e[1mBacklog\e[0;32m"
-		set_color blue
-		echo "  [project] <description>"
-		echo
-	end
-
-	set_color normal
-	echo -e " \e[1mTODOs\e[0;32m"
-	echo
-	if [ $r -lt 10 ]
-		# unimportant, so show rarely
-		set_color cyan
-		# echo "  [project] <description>"
-	end
-	if [ $r -lt 25 ]
-		# back-of-my-mind, so show occasionally
-		set_color green
-		# echo "  [project] <description>"
-	end
-	if [ $r -lt 50 ]
-		# upcoming, so prompt regularly
-		set_color yellow
-		# echo "  [project] <description>"
-	end
-
-	# urgent, so prompt always
-	set_color red
-	# echo "  [project] <description>"
-
-	echo
-
-	if test -s ~/todo
-		set_color magenta
-		cat todo | sed 's/^/ /'
-		echo
-	end
-
 	set_color normal
 end
 
-# load environment
-source $HOME/dotfiles/envrc
+# environment
+set -x DOTFILES "$HOME/dotfiles"
+set -x EDITOR 'vim'
+set -x TMPDIR '/tmp'
+set -x CDPATH "." "$HOME/projects" "$HOME/bookmarks"
 
 # load aliases
 source $DOTFILES/aliasrc
