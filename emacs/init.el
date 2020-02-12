@@ -1,10 +1,3 @@
-;(require 'package)
-
-;(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-;                         ("melpa" . "https://melpa.org/packages/")))
-
-;(package-initialize)
-
 (load "~/.emacs.d/init-packages")
 
 ;; (load-theme 'base16-default-dark t)
@@ -39,7 +32,7 @@
 ;; trim trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-; (set-face-font 'default "Inconsolata-14")
+;; (set-face-font 'default "Inconsolata-14")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
