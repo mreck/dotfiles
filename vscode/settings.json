@@ -12,5 +12,6 @@
     "window.restoreWindows": "none",
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "editor.renderWhitespace": "none"
 }
