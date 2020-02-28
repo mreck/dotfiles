@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -x "$(command -v doas)" ]
+then
+	doas apt update && doas apt upgrade -y && doas apt autoremove -y
+else
+	sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+fi
