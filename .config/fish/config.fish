@@ -4,6 +4,7 @@ set __fish_git_prompt_showstashstate ''
 set __fish_git_prompt_showupstream 'none'
 set -g fish_prompt_pwd_dir_length 3
 
+
 function fish_prompt
 	set_color brblack
 	echo -n "["(date "+%H:%M")"] "
@@ -18,7 +19,7 @@ function fish_prompt
 	else
 		echo -n $WHOAMI
 	end
-	
+
 	set_color -o brwhite
 	echo -n '@'
 	set_color blue
@@ -41,12 +42,14 @@ function fish_prompt
 	set_color normal
 end
 
+
 function fish_greeting
 	echo
 	echo -e (uname -ro | awk '{print " \\\\e[1mOS: \\\\e[0;32m"$0"\\\\e[0m"}')
 	echo -e (whoami | sed 's/^up //' | awk '{print " \\\\e[1mUser: \\\\e[0;32m"$0"\\\\e[0m"}')
 	echo -e (uptime -p | sed 's/^up //' | awk '{print " \\\\e[1mUptime: \\\\e[0;32m"$0"\\\\e[0m"}')
 	echo -e (uname -n | awk '{print " \\\\e[1mHostname: \\\\e[0;32m"$0"\\\\e[0m"}')
+	echo
 
 	echo -e " \\e[1mDisk usage:\\e[0m"
 	echo
@@ -54,7 +57,7 @@ function fish_greeting
 		df -l -h | grep -E 'dev/(xvda|sd|mapper)' | \
 		awk '{printf "\\\\t%s\\\\t%4s / %4s  %s\\\\n\n", $6, $3, $2, $5}' | \
 		sed -e 's/^\(.*\([8][5-9]\|[9][0-9]\)%.*\)$/\\\\e[0;31m\1\\\\e[0m/' -e 's/^\(.*\([7][5-9]\|[8][0-4]\)%.*\)$/\\\\e[0;33m\1\\\\e[0m/' | \
-		paste -sd ''\
+		paste -sd '' \
 	)
 	echo
 
@@ -92,12 +95,21 @@ function fish_greeting
 	set_color normal
 end
 
+
 # environment
 set -x DOTFILES "$HOME/dotfiles"
 set -x EDITOR 'vim'
 set -x TMPDIR '/tmp'
-set -x CDPATH "." "$HOME/projects" "$HOME/bookmarks"
+set -x CDPATH '.' "$HOME/projects" "$HOME/bookmarks"
+
+# path
+
+set PATH "$HOME/.cargo/bin" $PATH
+set PATH "/usr/local/go/bin" $PATH
+set PATH "$HOME/.npm-global/bin" $PATH
+set PATH "$HOME/bin" $PATH
+set PATH "$DOTFILES/scripts" $PATH
+
 
 # load aliases
 source $DOTFILES/aliasrc
-
