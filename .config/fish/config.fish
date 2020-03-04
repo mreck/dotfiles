@@ -104,11 +104,26 @@ set -x CDPATH '.' "$HOME/projects" "$HOME/bookmarks"
 
 # path
 
-set PATH "$HOME/.cargo/bin" $PATH
-set PATH "/usr/local/go/bin" $PATH
-set PATH "$HOME/.npm-global/bin" $PATH
-set PATH "$HOME/bin" $PATH
-set PATH "$DOTFILES/scripts" $PATH
+if test -e "$HOME/.cargo/bin"
+	set PATH "$HOME/.cargo/bin" $PATH
+end
+
+if test -e "/usr/local/go/bin"
+	set PATH "/usr/local/go/bin" $PATH
+end
+
+if test -e "$HOME/.npm-global/bin"
+	set PATH "$HOME/.npm-global/bin" $PATH
+end
+
+if test -e "$HOME/bin"
+	set PATH "$HOME/bin" $PATH
+end
+
+if test -e "$DOTFILES/scripts"
+	set PATH "$DOTFILES/scripts" $PATH
+end
+
 
 
 # load aliases
