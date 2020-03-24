@@ -1,3 +1,8 @@
+" Fish doesn't play all that well with others
+set shell=/bin/bash
+
+let mapleader = "\<Space>"
+
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
