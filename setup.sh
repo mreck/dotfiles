@@ -1,9 +1,17 @@
 #!/bin/sh
 
+mkdir -p $HOME/.cache > /dev/null
+mkdir -p $HOME/.config > /dev/null
+
 DOTFILES=$HOME/dotfiles
 
+# vim
+mkdir -p $HOME/.vim > /dev/null
+ln -sfv $DOTFILES/.vim/vimrc $HOME/.vim/vimrc
+ln -sfv $DOTFILES/.vim/autoload $HOME/.vim/
+
 ln -sfv $DOTFILES/.tmux.conf $HOME/.tmux.conf
-ln -sfv $DOTFILES/.vimrc $HOME/.vimrc
+
 ln -sfv $DOTFILES/.zshrc $HOME/.zshrc
 ln -sfv $DOTFILES/.zprofile $HOME/.zprofile
 ln -sfv $DOTFILES/.config/i3 $HOME/.config
