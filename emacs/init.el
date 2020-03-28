@@ -32,7 +32,17 @@
 ;; trim trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; paste clipboard with middle mouse button
+(global-set-key (kbd "<mouse-2>") 'clipboard-yank)
+
 ;; (set-face-font 'default "Inconsolata-14")
+
+;; BEGIN: ORG MODE
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; END: ORG MODE
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

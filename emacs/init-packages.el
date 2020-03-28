@@ -5,12 +5,12 @@
 
 ; list of my packages
 (setq package-list
-  '(base16-theme org magit))
+  '(base16-theme org org-bullets magit))
 
 ; activate all the packages
 (package-initialize)
 
-; fetch the list of packages available 
+; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
