@@ -13,5 +13,9 @@
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "[tsv]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8
+    }
 }
