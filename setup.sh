@@ -12,6 +12,10 @@ ln -sfv $DOTFILES/.vim/autoload $HOME/.vim/
 
 ln -sfv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
+# alacritty
+mkdir -p $HOME/.config/alacritty
+ln -sfv $DOTFILES/.config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
 ln -sfv $DOTFILES/.zshrc $HOME/.zshrc
 ln -sfv $DOTFILES/.zprofile $HOME/.zprofile
 ln -sfv $DOTFILES/.config/i3 $HOME/.config
