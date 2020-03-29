@@ -7,6 +7,7 @@ DOTFILES=$HOME/dotfiles
 
 # vim
 mkdir -p $HOME/.vim > /dev/null
+mkdir -p $HOME/.cache/vim/undo > /dev/null
 ln -sfv $DOTFILES/.vim/vimrc $HOME/.vim/vimrc
 ln -sfv $DOTFILES/.vim/autoload $HOME/.vim/
 

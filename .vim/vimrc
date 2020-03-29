@@ -75,3 +75,6 @@ set wildmode=longest,list,full
 
 " delete trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
