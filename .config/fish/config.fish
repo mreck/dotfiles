@@ -101,6 +101,7 @@ set -x DOTFILES "$HOME/dotfiles"
 set -x EDITOR 'vim'
 set -x TMPDIR '/tmp'
 set -x CDPATH '.' "$HOME/projects" "$HOME/bookmarks"
+set -x RANGER_LOAD_DEFAULT_RC FALSE
 
 # path
 
