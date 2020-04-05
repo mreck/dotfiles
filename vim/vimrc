@@ -3,19 +3,48 @@ set shell=/bin/bash
 
 let mapleader = "\<Space>"
 
+" necessary for lots of cool stuff
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
+" langauge support
+Plug 'dag/vim-fish'
+Plug 'plasticboy/vim-markdown'
+Plug 'dag/vim-fish'
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'godlygeek/tabular'
+" Plug 'rust-lang/rust.vim'
+" Plug 'rhysd/vim-clang-format'
 call plug#end()
 
-" disable arrow keys
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
+" disable arrow keys (use home row!)
+nnoremap <left>  :echoe "Use h"<CR>
+nnoremap <right> :echoe "Use l"<CR>
+nnoremap <up>    :echoe "Use k"<CR>
+nnoremap <down>  :echoe "Use j"<CR>
 
-" map jk to ESC in insert mode
+" left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" move by line (relevant when wrapping)
+nnoremap j gj
+nnoremap k gk
+
+" map more ESC options
 inoremap jk <esc>
+inoremap <C-j> <esc>
+inoremap <C-k> <esc>
+
+" ; as : (useful when missing shift)
+nnoremap ; :
+
+" jump to start and end of line using the home row keys
+map H ^
+map L $
 
 " shorter split navigation
 map <C-h> <C-w>h
@@ -58,7 +87,6 @@ set splitbelow
 set undodir=~/.cache/vim/undo
 set undofile
 
-set nocompatible " necessary for lots of cool stuff
 set showcmd      " shows you what you are typing as a command
 
 " proper search
