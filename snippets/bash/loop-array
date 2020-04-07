@@ -1,0 +1,9 @@
+#!/bin/bash
+
+array=('1' 'abc')
+
+for a in "${array[@]}"
+do
+	echo "$a"
+done
+
