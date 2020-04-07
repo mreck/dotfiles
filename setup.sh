@@ -17,8 +17,12 @@ ln -sfv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.config/alacritty
 ln -sfv $DOTFILES/config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
-ln -sfv $DOTFILES/.zshrc $HOME/.zshrc
-ln -sfv $DOTFILES/.zprofile $HOME/.zprofile
+# zsh
+mkdir -p $HOME/.config/zsh
+ln -sfv $DOTFILES/.zshenv $HOME/.zshenv
+ln -sfv $DOTFILES/config/zsh/.zshenv $HOME/.config/zsh/.zshenv
+ln -sfv $DOTFILES/config/zsh/.zshrc $HOME/.config/zsh/.zshrc
+
 ln -sfv $DOTFILES/config/i3 $HOME/.config
 ln -sfv $DOTFILES/config/fish $HOME/.config
 ln -sfv $DOTFILES/.bashrc $HOME/.bashrc

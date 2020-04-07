@@ -1,6 +1,3 @@
-# load environment
-source $HOME/dotfiles/envrc
-
 # enable colors
 autoload -U colors && colors
 
@@ -13,8 +10,27 @@ SAVEHIST=100000
 HISTFILE="$HOME/.cache/zhistory"
 
 # better autocomplete
-autoload -Uz compinit
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 compinit
+
+# include hidden files in autocomplete
+_comp_options+=(globdots)
+
+export KEYTIMEOUT=1
+
+# ctrl+z toggle fg
+function ctrlz() {
+	if [[ $#BUFFER == 0 ]]
+	then
+		fg >/dev/null 2>&1 && zle redisplay
+	else
+		zle push-input
+	fi
+}
+zle -N ctrlz
+bindkey '^Z' ctrlz
 
 # use fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
@@ -26,4 +42,4 @@ source $DOTFILES/aliasrc
 source $DOTFILES/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
