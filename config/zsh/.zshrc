@@ -20,6 +20,11 @@ _comp_options+=(globdots)
 
 export KEYTIMEOUT=1
 
+# open command in editor (ctrl+e)
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
 # ctrl+z toggle fg
 function ctrlz() {
 	if [[ $#BUFFER == 0 ]]
