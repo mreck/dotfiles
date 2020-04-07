@@ -23,6 +23,13 @@ ln -sfv $DOTFILES/.zshenv $HOME/.zshenv
 ln -sfv $DOTFILES/config/zsh/.zshenv $HOME/.config/zsh/.zshenv
 ln -sfv $DOTFILES/config/zsh/.zshrc $HOME/.config/zsh/.zshrc
 
+# mics
+mkdir -p $HOME/.config/wget
+ln -sfv $DOTFILES/config/wget/wgetrc $HOME/.config/wget/wgetrc
+
+mkdir -p $HOME/.config/zathura
+ln -sfv $DOTFILES/config/zathura/zathurarc $HOME/.config/zathura/zathurarc
+
 ln -sfv $DOTFILES/config/i3 $HOME/.config
 ln -sfv $DOTFILES/config/fish $HOME/.config
 ln -sfv $DOTFILES/.bashrc $HOME/.bashrc
