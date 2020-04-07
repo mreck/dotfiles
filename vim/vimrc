@@ -1,7 +1,7 @@
 " Fish doesn't play all that well with others
 set shell=/bin/bash
 
-let mapleader = "\<Space>"
+map <space> <leader>
 
 " necessary for lots of cool stuff
 set nocompatible
@@ -52,7 +52,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" german chars
+" german characters
 imap :a ä
 imap :u ü
 imap :o ö
@@ -61,10 +61,9 @@ imap :U Ü
 imap :O Ö
 imap :s ß
 
-" turn on Goyo distraction free writing
+" leader shortcuts
+map <leader>w :w<CR>
 map <leader>f :Goyo<CR>
-
-" run build script
 map <leader>b :w! \| ./build.sh<CR>
 
 " some basics
@@ -87,13 +86,14 @@ set splitbelow
 set undodir=~/.cache/vim/undo
 set undofile
 
-set showcmd      " shows you what you are typing as a command
+" shows you what you are typing as a command
+set showcmd
 
 " proper search
-set incsearch " highlight while searching
+set incsearch  " highlight while searching
 set ignorecase " case insensitive pattern matching
 set smartcase  " override ignorecase if pattern contains uppercase
-set gdefault " replace global (///g) as default
+set gdefault   " replace global (///g) as default
 
 set runtimepath^=~/dotfiles/submodules/ctrlpvim
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
