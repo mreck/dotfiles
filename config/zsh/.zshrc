@@ -32,6 +32,38 @@ function ctrlz() {
 zle -N ctrlz
 bindkey '^Z' ctrlz
 
+# shell greeting
+function greeting() {
+	echo
+	uname -ro |                  awk '{print " OS: " $0}'
+	whoami    | sed 's/^up //' | awk '{print " User: " $0}'
+	uptime -p | sed 's/^up //' | awk '{print " Uptime: " $0}'
+	uname -n  |                  awk '{print " Hostname: " $0}'
+	echo
+	echo " Disk Usage:"
+	echo
+	df -lh \
+		| grep -E '/dev/(sd|mapper|xvda)' \
+		| awk '{print "\t", $6, $3 " / " $2, $5}' \
+		| column -t
+	echo
+	echo " Network:"
+	echo
+	# http://tdt.rocks/linux_network_interface_naming.html
+	ip addr show up scope global \
+		| grep -E ': <|inet' \
+		| sed \
+			-e 's/^[[:digit:]]\+: //' \
+			-e 's/: <.*//' \
+			-e 's/.*inet[[:digit:]]* //' \
+			-e 's/\/.*//' \
+		| awk 'BEGIN {i=""} /\.|:/ {print i " " $0; next} // {i = $0}' \
+		| sort \
+		| column -t
+	echo
+}
+greeting
+
 # use fzf
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
