@@ -2,7 +2,7 @@
 autoload -U colors && colors
 
 # custom prompt
-PS1="%B%{$fg[grey]%}[$(date "+%H:%M")] %{$fg[blue]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~ %b%{$fg[red]%}$%{$reset_color%} "
+PS1="[%{$fg[yellow]%}$(date "+%H:%M")%{$fg[white]%}] %B%{$fg[blue]%}%n%{$fg[white]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~ %b%{$fg[red]%}$%{$reset_color%} "
 
 # save history
 HISTSIZE=100000
