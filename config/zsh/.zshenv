@@ -1,8 +1,9 @@
 export ZDOTDIR="$HOME/.config/zsh"
 
 # default programs
-export EDITOR="vim"
-export READER="zathura"
+
+source $HOME/dotfiles/aliasrc
+source $HOME/dotfiles/envrc
 
 # update PATH env variable
 if [ -d "$HOME/.cargo/bin" ] ; then
