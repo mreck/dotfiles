@@ -9,6 +9,9 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE="$HOME/.cache/zhistory"
 
+# behave more like vim
+bindkey -v
+
 # better autocomplete
 autoload -U compinit
 zstyle ':completion:*' menu select
