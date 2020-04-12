@@ -70,11 +70,12 @@ map <leader>b :w! \| ./build.sh<CR>
 syntax on
 
 set tabstop=4
+set shiftwidth=4
 set background=dark
 
 set number
 set relativenumber
-set autoindent
+set smartindent
 set encoding=utf-8
 set printencoding=utf-8
 
