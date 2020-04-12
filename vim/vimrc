@@ -87,6 +87,12 @@ set splitbelow
 set undodir=~/.cache/vim/undo
 set undofile
 
+" enable command history among others
+set viminfo+=n~/.cache/vim/viminfo
+
+" allow multiple buffers without saving
+set hidden
+
 " shows you what you are typing as a command
 set showcmd
 
@@ -107,3 +113,8 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" remember cursor position
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
