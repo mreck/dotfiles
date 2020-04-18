@@ -8,6 +8,8 @@ mkdir -p $HOME/.cache > /dev/null
 mkdir -p $HOME/.config > /dev/null
 mkdir -p $HOME/source > /dev/null
 
+mkdir -p $HOME/.cache/less > /dev/null
+
 DOTFILES=$HOME/dotfiles
 
 # vim
