@@ -11,6 +11,7 @@ mkdir -p $HOME/.cache/vim/undo > /dev/null
 ln -sfv $DOTFILES/vim/vimrc $HOME/.vim/vimrc
 ln -sfv $DOTFILES/vim/autoload $HOME/.vim/
 
+# tmux
 ln -sfv $DOTFILES/.tmux.conf $HOME/.tmux.conf
 
 # alacritty
