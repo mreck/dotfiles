@@ -76,14 +76,20 @@ function greeting() {
 }
 greeting
 
-# use fzf
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-
 # load aliases
 source $DOTFILES/aliasrc
 
+# use fzf
+[ -f $HOME/.fzf.zsh ] && \
+	source $HOME/.fzf.zsh || \
+	echo "[WARN] could not load fzf"
+
 # load zsh-autosuggestions
-source $DOTFILES/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+	source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh || \
+	echo "[WARN] could not load zsh auto suggestions"
 
 # load zsh-syntax-highlighting; should be last.
-[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh || \
+	echo "[WARN] could not load zsh syntax highlighting"

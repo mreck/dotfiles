@@ -1,7 +1,12 @@
 #!/bin/sh
 
+__setup_clone_or_pull() {
+	[ -d $2 ] && (cd "$2" && git pull) || git clone --depth 1 $1 $2
+}
+
 mkdir -p $HOME/.cache > /dev/null
 mkdir -p $HOME/.config > /dev/null
+mkdir -p $HOME/source > /dev/null
 
 DOTFILES=$HOME/dotfiles
 
@@ -23,6 +28,9 @@ mkdir -p $HOME/.config/zsh
 ln -sfv $DOTFILES/.zshenv $HOME/.zshenv
 ln -sfv $DOTFILES/config/zsh/.zshenv $HOME/.config/zsh/.zshenv
 ln -sfv $DOTFILES/config/zsh/.zshrc $HOME/.config/zsh/.zshrc
+__setup_clone_or_pull \
+	https://github.com/zsh-users/zsh-autosuggestions \
+	$HOME/.config/zsh/zsh-autosuggestions
 
 # mics
 mkdir -p $HOME/.config/wget
