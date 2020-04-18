@@ -32,6 +32,10 @@ __setup_clone_or_pull \
 	https://github.com/zsh-users/zsh-autosuggestions \
 	$HOME/.config/zsh/zsh-autosuggestions
 
+# npm
+mkdir -p $HOME/.cache/npm/global > /dev/null
+ln -sfv $DOTFILES/.npmrc $HOME/.npmrc
+
 # mics
 mkdir -p $HOME/.config/wget
 ln -sfv $DOTFILES/config/wget/wgetrc $HOME/.config/wget/wgetrc
