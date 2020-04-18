@@ -12,6 +12,8 @@ alias yt="youtube-dl -i --add-metadata"
 
 # GIT
 
+alias g="git"
+
 alias gl="git log --show-signature"
 alias glom="gl origin/master.."
 

@@ -37,6 +37,9 @@ mkdir -p $HOME/.cache/npm/cache > /dev/null
 mkdir -p $HOME/.cache/npm/global > /dev/null
 ln -sfv $DOTFILES/.npmrc $HOME/.npmrc
 
+# git
+ln -sfv $DOTFILES/.gitconfig $HOME/.gitconfig
+
 # mics
 mkdir -p $HOME/.config/wget
 ln -sfv $DOTFILES/config/wget/wgetrc $HOME/.config/wget/wgetrc

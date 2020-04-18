@@ -1,0 +1,28 @@
+[user]
+	email = mathias.reck@gmail.com
+	name = Mathias Reck
+
+[pull]
+	rebase = true
+
+[rebase]
+	stat = true
+	autosquash = true
+
+[fetch]
+	prune = true
+
+[status]
+	submoduleSummary = true
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	tool = vimdiff
+
+[alias]
+	cl = clone
+	ch = checkout
+	co = commit
+	new = diff --cached
