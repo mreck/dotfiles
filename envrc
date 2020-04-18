@@ -5,7 +5,13 @@ export EDITOR='vim'
 export TMPDIR='/tmp'
 export CDPATH=".:$HOME/projects:$HOME/bookmarks"
 
+# less settings
 export LESS=-R
 export LESSHISTFILE=$HOME/.cache/less/history
 export LESSHISTSIZE=1000
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
+
+# node settings
+export NODE_REPL_HISTORY=$HOME/.cache/node/repl_history
+export NODE_REPL_HISTORY_SIZE=1000
+export NODE_REPL_MODE=sloppy

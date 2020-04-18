@@ -9,6 +9,7 @@ mkdir -p $HOME/.config > /dev/null
 mkdir -p $HOME/source > /dev/null
 
 mkdir -p $HOME/.cache/less > /dev/null
+mkdir -p $HOME/.cache/node > /dev/null
 
 DOTFILES=$HOME/dotfiles
 
