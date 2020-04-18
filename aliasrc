@@ -3,6 +3,7 @@
 # MISC
 
 alias ls="ls -hN --color=auto --group-directories-first"
+alias la="ls -a"
 alias l="ls -la"
 alias cp="cp -v"
 alias grep="grep --color=auto"
