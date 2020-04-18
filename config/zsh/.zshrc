@@ -40,6 +40,10 @@ function ctrlz() {
 zle -N ctrlz
 bindkey '^Z' ctrlz
 
+# previous/next commands (ctrl+p/ctrl+n)
+bindkey '^p' up-line-or-history
+bindkey '^n' down-line-or-history
+
 # shell greeting
 function greeting() {
 	echo
