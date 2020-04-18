@@ -33,6 +33,7 @@ __setup_clone_or_pull \
 	$HOME/.config/zsh/zsh-autosuggestions
 
 # npm
+mkdir -p $HOME/.cache/npm/cache > /dev/null
 mkdir -p $HOME/.cache/npm/global > /dev/null
 ln -sfv $DOTFILES/.npmrc $HOME/.npmrc
 
