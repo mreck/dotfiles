@@ -43,6 +43,11 @@ ln -sfv $DOTFILES/.npmrc $HOME/.npmrc
 # git
 ln -sfv $DOTFILES/.gitconfig $HOME/.gitconfig
 
+# emacs
+mkdir -p $HOME/.emacs.d > /dev/null
+ln -sfv $DOTFILES/emacs/init.el $HOME/.emacs.d/init.el
+ln -sfv $DOTFILES/emacs/init-packages.el $HOME/.emacs.d/init-packages.el
+
 # mics
 mkdir -p $HOME/.config/wget
 ln -sfv $DOTFILES/config/wget/wgetrc $HOME/.config/wget/wgetrc
@@ -53,6 +58,4 @@ ln -sfv $DOTFILES/config/zathura/zathurarc $HOME/.config/zathura/zathurarc
 ln -sfv $DOTFILES/config/i3 $HOME/.config
 ln -sfv $DOTFILES/config/fish $HOME/.config
 ln -sfv $DOTFILES/.bashrc $HOME/.bashrc
-ln -sfv $DOTFILES/emacs/init.el $HOME/.emacs.d/init.el
-ln -sfv $DOTFILES/emacs/init-packages.el $HOME/.emacs.d/init-packages.el
 ln -sfv $DOTFILES/vscode/settings.json $HOME/.config/Code/User/settings.json
