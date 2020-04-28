@@ -112,6 +112,10 @@ set hidden
 " shows you what you are typing as a command
 set showcmd
 
+" spell checking
+set spelllang=en_us,de_de
+" set spell
+
 " proper search
 set incsearch  " highlight while searching
 set ignorecase " case insensitive pattern matching
