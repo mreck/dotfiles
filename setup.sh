@@ -45,6 +45,7 @@ ln -sfv $DOTFILES/.gitconfig $HOME/.gitconfig
 
 # emacs
 mkdir -p $HOME/.emacs.d > /dev/null
+mkdir -p $HOME/.cache/emacs
 ln -sfv $DOTFILES/emacs/init.el $HOME/.emacs.d/init.el
 ln -sfv $DOTFILES/emacs/init-packages.el $HOME/.emacs.d/init-packages.el
 
