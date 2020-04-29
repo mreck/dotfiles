@@ -49,6 +49,12 @@ mkdir -p $HOME/.cache/emacs
 ln -sfv $DOTFILES/emacs/init.el $HOME/.emacs.d/init.el
 ln -sfv $DOTFILES/emacs/init-packages.el $HOME/.emacs.d/init-packages.el
 
+# micro
+mkdir -p $HOME/.config/micro
+ln -sfv $DOTFILES/config/micro/bindings.json $HOME/.config/micro/bindings.json
+ln -sfv $DOTFILES/config/micro/settings.json $HOME/.config/micro/settings.json
+ln -sfv $DOTFILES/config/micro/init.lua $HOME/.config/micro/init.lua
+
 # mics
 mkdir -p $HOME/.config/wget
 ln -sfv $DOTFILES/config/wget/wgetrc $HOME/.config/wget/wgetrc

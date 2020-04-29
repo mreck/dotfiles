@@ -1,0 +1,6 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "Ctrl-x": "Cut|CutLine",
+    "Ctrl-d": "SpawnMultiCursor",
+    "Alt-c": "RemoveAllMultiCursors"
+}
