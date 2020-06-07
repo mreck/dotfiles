@@ -109,6 +109,13 @@ set viminfo+=n~/.cache/vim/viminfo
 " allow multiple buffers without saving
 set hidden
 
+" use the current working directory and subfolders for searching
+set path+=**
+
+" ignore those directories
+wildignore+=**/node_modules/**
+wildignore+=**/.git/**
+
 " shows you what you are typing as a command
 set showcmd
 
@@ -123,6 +130,7 @@ set smartcase  " override ignorecase if pattern contains uppercase
 set gdefault   " replace global (///g) as default
 
 " enable autocompletion
+set wildmenu
 set wildmode=longest,list,full
 
 " delete trailing whitespace on save
