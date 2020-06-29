@@ -5,6 +5,8 @@
 alias ls="ls -hN --color=auto --group-directories-first"
 alias la="ls -a"
 alias l="ls -la"
+alias tarc="tar -czvf"
+alias tarx="tar -xzvf"
 alias cp="cp -v"
 alias grep="grep --color=auto"
 alias cls="clear && clear"
